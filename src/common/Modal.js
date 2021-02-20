@@ -1,5 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Portal } from 'react-portal';
+import styled from 'styled-components'
+import Button from './Button';
 
 
 const ModalBackdrop = styled.div`
@@ -15,14 +17,15 @@ const ModalBackdrop = styled.div`
 `;
 const ModalBody = styled.div`
     position: relative;
-    margin: 15% auto; 
+    margin: 10% auto; 
     padding: 3rem 1rem;
     border: 1px solid #888;
     width: 50%;
+    color: white;
     background-color: #282c34;
 `;
 
-const CloseButton = styled.button`
+const CloseButton = styled(Button)`
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -30,10 +33,14 @@ const CloseButton = styled.button`
 `;
 
 export const Modal = ({ children, onClose }) =>
-    <ModalBackdrop>
-        <ModalBody>
-            <CloseButton onClick={onClose}>X</CloseButton>
-            {children}
-        </ModalBody>
-    </ModalBackdrop>
+    <Portal>
+        <ModalBackdrop>
+            <ModalBody>
+                <CloseButton onClick={onClose}>X</CloseButton>
+                {children}
+            </ModalBody>
+        </ModalBackdrop>
+    </Portal>
     ;
+
+export default Modal;

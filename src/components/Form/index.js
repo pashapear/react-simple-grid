@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTable } from '../../hooks/useTable';
 import { Formik, ErrorMessage } from 'formik';
-import { StyledForm, Field, Error, SubmitButton } from './styles';
+import Button from '../../common/Button';
+import { StyledForm, Field, Error } from './styles';
+
 
 const Form = ({ onSubmit, values }) => {
     const [state] = useTable();
@@ -30,7 +32,7 @@ const Form = ({ onSubmit, values }) => {
                         <ErrorMessage name={name} component={Error} />
                     </React.Fragment>
                 )}
-                <SubmitButton key="submit" type="submit">Submit</SubmitButton>
+                <Button key="submit" type="submit">Submit</Button>
             </StyledForm>
         }
     </Formik>;
