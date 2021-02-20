@@ -1,5 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useTable } from '../../hooks/useTable';
+
+const StyledRow = styled.tr`
+    height: 2em;
+`;
 
 export const Headers = () => {
     const [state] = useTable();
@@ -7,7 +12,7 @@ export const Headers = () => {
     const { fields: headers } = config;
 
     return <thead>
-        <tr>{headers.map(([key, value]) => <Header key={key} header={value} />)}</tr>
+        <StyledRow>{headers.map(([key, value]) => <Header key={key} header={value} />)}</StyledRow>
     </thead>;
 };
 

@@ -17,6 +17,7 @@ const Form = ({ onSubmit, values }) => {
             () => <StyledForm>
                 {fields.map(([name, placeholder, type]) =>
                     <React.Fragment key={name}>
+                        <label htmlFor={name}>{placeholder}</label>
                         {
                             Array.isArray(type) ?
                                 <Field component="select" name={name}>

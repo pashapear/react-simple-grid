@@ -16,6 +16,7 @@ export const SubmitButton = styled.button`
     padding: 0.5rem;
     margin: 0.5rem 0;
     font-weight: bold;
+    cursor: pointer;
 `;
 
 export const Error = styled.div`

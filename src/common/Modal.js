@@ -16,20 +16,24 @@ const ModalBackdrop = styled.div`
 const ModalBody = styled.div`
     position: relative;
     margin: 15% auto; 
-    padding: 20px;
+    padding: 3rem 1rem;
     border: 1px solid #888;
     width: 50%;
+    background-color: #282c34;
 `;
 
 const CloseButton = styled.button`
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
 `;
 
-export const Modal = ({ children, onClose }) => <ModalBackdrop>
-    <ModalBody>
-        <CloseButton onClick={onClose}>X</CloseButton>
-        {children}
-    </ModalBody>
-</ModalBackdrop>;
+export const Modal = ({ children, onClose }) =>
+    <ModalBackdrop>
+        <ModalBody>
+            <CloseButton onClick={onClose}>X</CloseButton>
+            {children}
+        </ModalBody>
+    </ModalBackdrop>
+    ;
