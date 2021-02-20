@@ -6,7 +6,7 @@ const Headers = () => {
     const { config } = state;
     const { fields: headers } = config;
     return <thead>
-        <tr>{headers.map(header => <Header header={header} />)}</tr>
+        <tr>{headers.map(header => <Header key={header} header={header} />)}</tr>
     </thead>;
 };
 
@@ -18,13 +18,13 @@ const Rows = () => {
     const [state] = useTable();
     const { data: rows } = state;
     return <tbody>
-        {rows.map(row => <Row row={row} />)}
+        {rows.map(row => <Row key={row.part_number} row={row} />)}
     </tbody>
 };
 
 const Row = ({ row }) => {
     return <tr>
-        {Object.values(row).map(data => <td>{data}</td>
+        {Object.values(row).map((data, index) => <td key={index}>{data}</td>
         )}
     </tr>
 };

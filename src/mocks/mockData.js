@@ -1,5 +1,4 @@
 export const mockData = [{
-    id: '0',
     part_number: '1233ABCC',
     price: 3,
     quantity: 100,
@@ -10,7 +9,6 @@ export const mockData = [{
     delivery_address: '456 South St, Chicago, IL 60618'
 },
 {
-    id: '1',
     part_number: '4565DHGDD',
     price: 70.5,
     quantity: 50,
@@ -21,7 +19,6 @@ export const mockData = [{
     delivery_address: '456 South St, Chicago, IL 60618'
 },
 {
-    id: '2',
     part_number: '5446HDFD',
     price: 10.5,
     quantity: 30,
@@ -32,7 +29,6 @@ export const mockData = [{
     delivery_address: '456 South St, Chicago, IL 60618'
 },
 {
-    id: '3',
     part_number: '54545LKJK',
     price: 5.5,
     quantity: 60,
