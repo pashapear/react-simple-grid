@@ -7,7 +7,7 @@ import {
 
 import actions from './actions';
 
-const useTableState = () => {
+const useTable = () => {
     const context = useContext(TableStateContext);
 
     if (context === undefined) {
@@ -17,4 +17,4 @@ const useTableState = () => {
     return context;
 };
 
-export { useTableState, TableProvider, actions };
+export { useTable, TableProvider, actions };

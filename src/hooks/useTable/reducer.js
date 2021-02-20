@@ -4,13 +4,8 @@ const reducer = (state, action) => {
     const { type, payload } = action;
 
     switch (type) {
-
         case types.SET_QUERY:
-            return update(state, {
-                query: {
-                    $set: payload
-                }
-            });
+            return { ...state, query: payload };
 
         default:
             throw new Error(`Unhandled action type: ${type}`);

@@ -6,8 +6,8 @@ import { initialState } from './constants';
 export const TableContext = createContext();
 export const TableStateContext = createContext();
 
-export const TableProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const TableProvider = ({ children, config, data }) => {
+  const [state, dispatch] = useReducer(reducer, { ...initialState, config, data });
 
   return (
     <TableStateContext.Provider value={[state, dispatch]}>
