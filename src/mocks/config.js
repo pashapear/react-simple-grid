@@ -24,8 +24,13 @@ const validationSchema = yup.object().shape({
             - Optional, will default to 'text' within form,
             - Accepts a [key, value] pair for dropdowns
 
+     idKey:
+        - Represents the unique id for each set of data
+
     validationSchema: 
         - Yup Object used for Add/Edit form validation
+
+   
     
 */
 
@@ -40,5 +45,6 @@ export const config = {
         ['order_date', 'Order Date', 'date'],
         ['delivery_address', 'Delivery Address']
     ],
+    idKey: 'part_number',
     validationSchema
 };
