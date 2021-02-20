@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTable } from '../../hooks/useTable';
-import { Formik, Form as FormikForm, Field as DefaultField } from 'formik';
+import { Formik, Form as FormikForm, Field as DefaultField, ErrorMessage } from 'formik';
 
 const StyledForm = styled(FormikForm)`
     display: flex;
@@ -17,6 +17,11 @@ const Field = styled(DefaultField)`
 const SubmitButton = styled.button`
     padding: 0.5rem;
     margin: 0.5rem 0;
+    font-weight: bold;
+`;
+
+const Error = styled.div`
+    font-size: 1em;
 `;
 
 const Form = () => {
@@ -29,20 +34,25 @@ const Form = () => {
         onSubmit={values => {
             console.log(values);
         }}
-        initialValues={Object.fromEntries(fields)}
+        initialValues={Object.fromEntries(fields.map(([key]) => [key, '']))}
     >
         {
             () => <StyledForm>
-                {fields.map(([name, placeholder, type]) => {
-                    if (Array.isArray(type)) {
-                        return <Field key={name} as="select" name={name}>
-                            {type.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-                        </Field>;
-                    } else {
-                        return <Field key={name} name={name} placeholder={placeholder} type={type || 'text'} />;
-                    }
-                })}
-                <SubmitButton type="submit">Submit</SubmitButton>
+                {fields.map(([name, placeholder, type]) =>
+                    <React.Fragment key={name}>
+                        {
+                            Array.isArray(type) ?
+                                <Field component="select" name={name}>
+                                    <option key="default" defaultValue>{`Select ${placeholder}`}</option>
+                                    {type.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                                </Field>
+                                :
+                                <Field name={name} placeholder={placeholder} type={type || 'text'} />
+                        }
+                        <ErrorMessage name={name} component={Error} />
+                    </React.Fragment>
+                )}
+                <SubmitButton key="submit" type="submit">Submit</SubmitButton>
             </StyledForm>
         }
     </Formik>;

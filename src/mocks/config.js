@@ -2,8 +2,8 @@ import * as yup from 'yup';
 
 const validationSchema = yup.object().shape({
     part_number: yup.string().required(),
-    price: yup.number().required(),
-    quantity: yup.number().required().positive().integer(),
+    price: yup.number().required().positive(),
+    quantity: yup.number().required().positive(),
     uom: yup.string().required(), // EA | G | M (EA = unit, G = Gramme, M = meter)
     supplier_name: yup.string().required(),
     supplier_address: yup.string().required(),
