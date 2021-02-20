@@ -13,16 +13,32 @@ const validationSchema = yup.object().shape({
     delivery_address: yup.string().required(),
 });
 
+
+/* Table Configuration Object
+
+    fields: 
+        - Accepts an Array of [key, value, type] arrays
+        - Used for both the Table Headers and Add/Edit Forms
+        
+        [, , type]: 
+            - Optional, will default to 'text' within form,
+            - Accepts a [key, value] pair for dropdowns
+
+    validationSchema: 
+        - Yup Object used for Add/Edit form validation
+    
+*/
+
 export const config = {
     fields: [
-        'part_number',
-        'price',
-        'quantity',
-        'uom',
-        'supplier_name',
-        'supplier_address',
-        'order_date',
-        'delivery_address'
+        ['part_number', 'Part Number'],
+        ['price', 'Price'],
+        ['quantity', 'Quantity'],
+        ['uom', 'UOM', [['ea', 'EA (unit)'], ['g', 'G (gramme)'], ['m', 'M (meter)'],]],
+        ['supplier_name', 'Supplier Name'],
+        ['supplier_address', 'Supplier Address'],
+        ['order_date', 'Order Date', 'date'],
+        ['delivery_address', 'Delivery Address']
     ],
     validationSchema
 };
