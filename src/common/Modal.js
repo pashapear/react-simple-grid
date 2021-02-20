@@ -23,6 +23,7 @@ const ModalBody = styled.div`
     width: 50%;
     color: white;
     background-color: #282c34;
+    overflow-x: auto;
 `;
 
 const CloseButton = styled(Button)`

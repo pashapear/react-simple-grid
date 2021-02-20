@@ -13,5 +13,6 @@ export const Field = styled(DefaultField)`
 `;
 
 export const Error = styled.div`
+    padding: 0 0 1rem;
     font-size: 1em;
 `;

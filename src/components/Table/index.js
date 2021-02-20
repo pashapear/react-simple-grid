@@ -12,16 +12,27 @@ const StyledTable = styled.table`
     border-collapse: collapse;
 `;
 
+const Actions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    min-width: 25%;
+`;
+
 const Table = () => {
     const [show, setShow] = useState(false);
-    const [, dispatch] = useTable();
+    const [showJSON, setShowJSON] = useState(false);
+    const [state, dispatch] = useTable();
+    const { data } = state;
 
     return <>
         <StyledTable>
             <Headers />
             <Rows />
         </StyledTable>
-        <Button onClick={() => setShow(true)}>Add Data</Button>
+        <Actions>
+            <Button onClick={() => setShow(true)}>Add Data</Button>
+            <Button onClick={() => setShowJSON(true)}>Display JSON</Button>
+        </Actions>
         {
             show &&
             <Modal onClose={() => setShow(false)}>
@@ -29,6 +40,12 @@ const Table = () => {
                     dispatch(actions.addRow(values));
                     setShow(false);
                 }} />
+            </Modal>
+        }
+        {
+            showJSON &&
+            <Modal onClose={() => setShowJSON(false)}>
+                <code>{JSON.stringify(data)}</code>
             </Modal>
         }
     </>;
