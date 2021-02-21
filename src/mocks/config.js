@@ -13,8 +13,12 @@ const validationSchema = yup.object().shape({
     delivery_address: yup.string().required(),
 });
 
+/* 
 
-/* Table Configuration Object
+Table Configuration Object
+
+    title:
+        - Table title display text
 
     fields: 
         - Accepts an Array of [key, value, type] arrays
@@ -25,12 +29,10 @@ const validationSchema = yup.object().shape({
             - Accepts a [key, value] pair for dropdowns
 
      idKey:
-        - Represents the unique id for each set of data
+        - Sets which field represents the unique id for each data item
 
     validationSchema: 
         - Yup Object used for Add/Edit form validation
-
-   
     
 */
 

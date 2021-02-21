@@ -22,7 +22,7 @@ export const Rows = ({ rows }) => {
 };
 
 const StyledRow = styled.tr`
-    height: 2em;
+    height: 2.5em;
     cursor: pointer;
     :hover {
         border: 1px solid white;

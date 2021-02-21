@@ -1,31 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { actions, useTable } from '../../hooks/useTable';
 import { Headers } from './Headers';
 import { Rows } from './Rows';
 import Form from '../Form';
 import { Modal } from '../../common/Modal';
 import { Button } from '../../common/Button';
-
-const StyledTable = styled.table`
-    border: 1px solid white;
-    border-collapse: collapse;
-`;
-
-const Actions = styled.div`
-    display: flex;
-    justify-content: space-between;
-    min-width: 25%;
-    margin-top: 1rem; 
-`;
-
-const InputWrapper = styled.div`
-    display: inline;
-    margin-bottom: 1rem;
-    & label {
-        margin-right: 0.5rem;   
-    }
-`;
+import { InputWrapper, StyledTable, Actions } from './styles';
 
 const Table = () => {
     const [show, setShow] = useState(false);

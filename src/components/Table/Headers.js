@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { useTable } from '../../hooks/useTable';
 
 const StyledRow = styled.tr`
-    height: 2em;
+    height: 2.5em;
+    border: 1px solid white;    
 `;
 
 export const Headers = () => {
