@@ -1,7 +1,11 @@
 export const initialState = {
   data: [],
-  config: { fields: [], validationSchema: {} },
-  query: ''
+  config: {
+    idKey: '',
+    title: '',
+    fields: [],
+    validationSchema: {}
+  },
 };
 
 export const STORE_NAME = 'table';

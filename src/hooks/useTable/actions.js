@@ -10,13 +10,7 @@ export const editRow = payload => ({
   payload
 });
 
-export const setQuery = query => ({
-  type: types.SET_QUERY,
-  payload: query
-});
-
 export default {
   addRow,
-  editRow,
-  setQuery
+  editRow
 };

@@ -17,9 +17,6 @@ const reducer = (state, action) => {
                 ...state, data: data.map((item) => item[idKey] === payload[idKey] ? payload : item)
             };
         }
-        case types.SET_QUERY:
-            return { ...state, query: payload };
-
         default:
             throw new Error(`Unhandled action type: ${type}`);
     }
