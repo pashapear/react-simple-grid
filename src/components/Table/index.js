@@ -16,18 +16,39 @@ const Actions = styled.div`
     display: flex;
     justify-content: space-between;
     min-width: 25%;
+    margin-top: 1rem; 
+`;
+
+const InputWrapper = styled.div`
+    display: inline;
+    margin-bottom: 1rem;
+    & label {
+        margin-right: 0.5rem;   
+    }
 `;
 
 const Table = () => {
     const [show, setShow] = useState(false);
     const [showJSON, setShowJSON] = useState(false);
     const [state, dispatch] = useTable();
-    const { data } = state;
+    const { data, config } = state;
+    const [rows, setRows] = useState(data);
+    const { title } = config;
 
     return <>
+        <h1>{title}</h1>
+        <InputWrapper>
+            <label htmlFor="search">Search: </label>
+            <input
+                name="search"
+                onChange={e => setRows(data.filter(item =>
+                    Object.values(item).join(' ').toLowerCase().includes(e.currentTarget.value.toLowerCase())))
+                }
+            />
+        </InputWrapper>
         <StyledTable>
             <Headers />
-            <Rows />
+            <Rows rows={rows} />
         </StyledTable>
         <Actions>
             <Button onClick={() => setShow(true)}>Add Data</Button>

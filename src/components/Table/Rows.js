@@ -4,10 +4,10 @@ import { actions, useTable } from '../../hooks/useTable';
 import Form from '../Form';
 import { Modal } from '../../common/Modal';
 
-export const Rows = () => {
+export const Rows = ({ rows }) => {
     const [state, dispatch] = useTable();
 
-    const { data: rows, config } = state;
+    const { config } = state;
     const { idKey } = config;
 
     return <tbody>

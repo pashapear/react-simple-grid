@@ -35,6 +35,7 @@ const validationSchema = yup.object().shape({
 */
 
 export const config = {
+    title: 'Purchase Orders',
     fields: [
         ['part_number', 'Part Number'],
         ['price', 'Price'],
