@@ -35,6 +35,7 @@ const Table = () => {
             <Headers />
             <Rows rows={rows} />
         </StyledTable>
+        <h4>Click rows to edit</h4>
         <Actions>
             <Button onClick={() => setShow(true)}>Add Data</Button>
             <Button onClick={() => setShowJSON(true)}>Display JSON</Button>
