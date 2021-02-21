@@ -38,8 +38,8 @@ export const config = {
     title: 'Purchase Orders',
     fields: [
         ['part_number', 'Part Number'],
-        ['price', 'Price'],
-        ['quantity', 'Quantity'],
+        ['price', 'Price', 'number'],
+        ['quantity', 'Quantity', 'number'],
         ['uom', 'UOM', [['ea', 'EA (unit)'], ['g', 'G (gramme)'], ['m', 'M (meter)'],]],
         ['supplier_name', 'Supplier Name'],
         ['supplier_address', 'Supplier Address'],

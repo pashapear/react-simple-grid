@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { actions, useTable } from '../../hooks/useTable';
 import { Headers } from './Headers';
@@ -35,11 +35,16 @@ const Table = () => {
     const [rows, setRows] = useState(data);
     const { title } = config;
 
+    useEffect(() => {
+        setRows(data);
+    }, [data]);
+
     return <>
         <h1>{title}</h1>
         <InputWrapper>
             <label htmlFor="search">Search: </label>
             <input
+                type="search"
                 name="search"
                 onChange={e => setRows(data.filter(item =>
                     Object.values(item).join(' ').toLowerCase().includes(e.currentTarget.value.toLowerCase())))
