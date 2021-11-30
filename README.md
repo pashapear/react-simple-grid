@@ -1,6 +1,8 @@
-# Ravacan Configurable Table
+# React Simple Grid
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+
+This was a quick project for a coding interview. They wanted a table created where you can edit each cell and retrieve the overall state at any time. I chose to make the grid cells editable via a modal. Styling was not part of the grading on this assignment or so I was told.. (I didn't get the job). Anyway please enjoy, my attempt at a simple grid component.
 
 ## Available Scripts
 
